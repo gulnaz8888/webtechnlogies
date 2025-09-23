@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head>
+  <link rel="stylesheet" href="Mainstyle.css">
+  <link rel="icon" href="book-icon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Book Reviews</title>
+  <link rel="stylesheet" href="reviews.css">
+</head>
+<body>
+  <header>
+
+    <div class="left">
+      <div class="logo">Read <span class="emerald">&</span> Rate</div>
+      <nav>
+        <a href="index.html" >Home</a>
+        <a href="genres.html">Genres</a>
+        <a href="Review.html" class="active">Reviews</a>
+        <a href="#">Top</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="right">
+      <form>
+        <input type="text" placeholder="Search here..">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+      <a href="#" class="login"><i class="fas fa-user"></i> Login</a>
+    </div>
+  </header>
+  <main class="reviews-section">
+    <h1>Book Reviews</h1>
+
+    <div class="review-card">
+      <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" alt="The Harry Potter">
+      <div class="review-content">
+        <h2>The Harry Potter</h2>
+        <p class="author">by J.R.R. Tolkien</p>
+        <blockquote>
+          “A magical adventure that feels timeless. Loved every page!”
+        </blockquote>
+        <div class="review-meta">
+          <span class="stars">★★★★★</span>
+          <span class="reviewer">– Alexey, <time datetime="2025-09-23">Sep 23, 2025</time></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykYK_AIlq6iyGWcehw0Vj8JFyEYyk9_AOXQ&s" alt="IT">
+      <div class="review-content">
+        <h2>IT</h2>
+        <p class="author">by Stephen King</p>
+        <blockquote>
+          “Creepy, intense and brilliant storytelling. Not for the faint of heart!”
+        </blockquote>
+        <div class="review-meta">
+          <span class="stars">★★★★☆</span>
+          <span class="reviewer">– Marina, <time datetime="2025-09-21">Sep 21, 2025</time></span>
+        </div>
+      </div>
+    </div>
+    <section class="add-review">
+      <h2>Leave a Review</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Book Title" required>
+        <textarea placeholder="Your Review" required></textarea>
+        <label>Rating:</label>
+        <select required>
+          <option value="5">★★★★★ (5)</option>
+          <option value="4">★★★★☆ (4)</option>
+          <option value="3">★★★☆☆ (3)</option>
+          <option value="2">★★☆☆☆ (2)</option>
+          <option value="1">★☆☆☆☆ (1)</option>
+        </select>
+        <button type="submit">Submit Review</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <h2>Read & Rate</h2>
+    <p>Discover, review and share your favorite books.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="copy">&copy; 2025 Read & Rate. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

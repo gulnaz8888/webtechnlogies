@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 80%;
+  margin: 40px auto;
+}
+
+h1, h2 {
+  color: darkgreen;
+}
+
+/* Таблица */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid #197036;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #197036;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f0f8f0;
+}
+
+/* Address */
+address {
+  font-style: normal;
+  background: #f9f9f9;
+  padding: 15px;
+  border-left: 4px solid #197036;
+  border-radius: 6px;
+}
+
+/* Менеджеры */
+.manager {
+  margin: 20px 0;
+}
+
+.float-img {
+  float: left;
+  width: 120px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 10px;
+  border: 2px solid #197036;
+}
+
+/* Donate form */
+form {
+  margin-top: 10px;
+}
+
+input[type="number"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: darkgreen;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #145a2c;
+}

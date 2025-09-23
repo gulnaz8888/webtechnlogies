@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Genres - Read & Rate</title>
+  <link rel="stylesheet" href="Mainstyle.css">
+  <link rel="icon" href="book-icon.png" type="image/png">
+  
+  <!-- Подключаем иконки поиска -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Сетка для книг */
+    .books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px;
+}
+
+
+    /* Карточка книги */
+    article.heavy-rounded {
+      background: #28562d;
+      border-radius: 15px; /* закругленные углы */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* мягкая тень */
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    article.heavy-rounded a {
+  color: #f1f1f1;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+article.heavy-rounded a:hover {
+  color: #ffd700; /* золотистый при наведении */
+}
+
+    /* Эффект при наведении */
+    article.heavy-rounded:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    article.heavy-rounded h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    article.heavy-rounded img {
+      border-radius: 10px;
+      margin-bottom: 10px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    article.heavy-rounded p {
+      font-size: 15px;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    /* Ссылки в Popular Genres */
+.genre-list ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.genre-list ul li a {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: #197036;  /* зелёный фон */
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.genre-list ul li a:hover {
+  background: #145a2c; /* темнее при наведении */
+}
+
+
+    /* Жанровая ссылка (тэг) */
+    .genre-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      background: #197036;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .genre-tag:hover {
+      background: #208142;
+    }
+
+    /* Оформление цитаты */
+aside {
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 20px 30px;
+  background: #f9f9f9;
+  border-left: 6px solid #197036; /* зелёная полоса слева */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+aside blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2c3e50;
+  position: relative;
+}
+
+aside blockquote::before {
+  content: "“";
+  font-size: 40px;
+  color: #197036;
+  position: absolute;
+  left: -15px;
+  top: -10px;
+}
+
+aside blockquote::after {
+  content: "”";
+  font-size: 40px;
+  color: #197036;
+  position: absolute;
+  right: -10px;
+  bottom: -20px;
+}
+
+figure figcaption {
+  font-size: 1.2em;     /* размер чуть больше обычного текста */
+  color: #ffffff;          /* тёмно-серый (можно заменить на свой цвет) */
+  margin-top: 8px;      /* небольшой отступ сверху */
+  text-align: center;   /* выравнивание по центру */
+  font-weight: 500;     /* немного жирнее */
+}
+
+
+</style>
+</head>
+<body>
+  <!-- Шапка -->
+  <header>
+
+    <div class="left">
+      <div class="logo">Read <span class="emerald">&</span> Rate</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="genres.html" class="active">Genres</a>
+        <a href="Review.html">Reviews</a>
+        <a href="#">Top</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="right">
+      <form>
+        <input type="text" placeholder="Search here..">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+      <a href="#" class="login"><i class="fas fa-user"></i> Login</a>
+    </div>
+  </header>
+
+    <main>
+        <section class="genre-list">
+            <h2>Popular Genres</h2>
+            <ul>
+                <li><a href="fiction.html">Fiction</a></li>
+                <li><a href="fantasy.html">Fantasy</a></li>
+                <li><a href="mystery.html">Mystery</a></li>
+                <li><a href="romance.html">Romance</a></li>
+                <li><a href="scifi.html">Science Fiction</a></li>
+                <li><a href="nonfiction.html">Non-fiction</a></li>
+                <li><a href="more genres.html">More Genres...</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Featured Books by Genre</h2>
+            
+            <div class="books-grid">
+                <article class="heavy-rounded">
+                <h3><a href="hobbit.html">The Hobbit</a></h3>
+                <figure>
+                    <a href="hobbit.html">
+                        <img src="hobbit.jpg" alt="The Hobbit book cover" width="150">
+                    </a>
+                    <figcaption>J.R.R. Tolkien</figcaption>
+                </figure>
+                <p><em>The Hobbit</em> is a fantasy classic full of adventure and magic.</p>
+                <a href="fantasy.html" class="genre-tag">Fantasy</a>
+                </article>
+
+    <!-- Книга 2 -->
+    <article class="heavy-rounded">
+      <h3><a href="sherlock.html">Sherlock Holmes</a></h3>
+      <figure>
+        <a href="sherlock.html">
+          <img src="sherlock.jpg" alt="Sherlock Holmes book cover" width="150">
+        </a>
+        <figcaption>Arthur Conan Doyle</figcaption>
+      </figure>
+      <p><em>Sherlock Holmes</em> offers thrilling detective stories full of suspense.</p>
+      <a href="mystery.html" class="genre-tag">Mystery</a>
+    </article>
+
+    <!-- Книга 3 -->
+    <article class="heavy-rounded">
+      <h3><a href="littlewomen.html">Little Women</a></h3>
+      <figure>
+        <a href="littlewomen.html">
+          <img src="littlewomen.jpg" alt="Little Women book cover" width="150">
+        </a>
+        <figcaption>Louisa May Alcott</figcaption>
+      </figure>
+      <p><em>Little Women</em> is a story about the March sisters navigating life’s challenges.</p>
+      <a href="fiction.html" class="genre-tag">Fiction</a>
+    </article>
+
+    <article class="heavy-rounded">
+      <h3><a href="notebook.html">Notebook</a></h3>
+      <figure>
+        <a href="notebook.html">
+          <img src="notebook.jpg" alt="Notebook book cover" width="150">
+        </a>
+        <figcaption>Nicholas Sparks</figcaption>
+      </figure>
+      <p><em>Notebook</em> is a story about the enduring power of love.</p>
+      <a href="romance.html" class="genre-tag">Romance</a>
+    </article>
+
+    <!-- The Martian -->
+<article class="heavy-rounded">
+  <h3><a href="themartian.html">The Martian</a></h3>
+  <figure>
+    <a href="themartian.html">
+      <img src="martian.jpg" alt="The Martian book cover" width="150">
+    </a>
+    <figcaption>Andy Weir</figcaption>
+  </figure>
+  <p><em>The Martian</em> is a gripping science fiction story of survival on Mars.</p>
+  <a href="scifi.html" class="genre-tag">Science Fiction</a>
+</article>
+
+<!-- A Short History of Nearly Everything -->
+<article class="heavy-rounded">
+  <h3><a href="shorthistory.html">A Short History of Nearly Everything</a></h3>
+  <figure>
+    <a href="shorthistory.html">
+      <img src="billsbook.jpg" alt="A Short History of Nearly Everything book cover" width="150">
+    </a>
+    <figcaption>Bill Bryson</figcaption>
+  </figure>
+  <p><em>A Short History of Nearly Everything</em> explores science in an accessible and entertaining way.</p>
+  <a href="nonfiction.html" class="genre-tag">Non-fiction</a>
+</article>
+
+<!-- Three Comrades -->
+<article class="heavy-rounded">
+  <h3><a href="threecomrades.html">Three Comrades</a></h3>
+  <figure>
+    <a href="threecomrades.html">
+      <img src="threecomrades.jpg" alt="Three Comrades book cover" width="150">
+    </a>
+    <figcaption>Erich Maria Remarque</figcaption>
+  </figure>
+  <p><em>Three Comrades</em> tells a moving story of friendship, love, and loss in post-war Germany.</p>
+  <a href="fiction.html" class="genre-tag">Fiction</a>
+</article>
+
+<!-- IT -->
+<article class="heavy-rounded">
+  <h3><a href="it.html">IT</a></h3>
+  <figure>
+    <a href="it.html">
+      <img src="IT.jpg" alt="IT book cover" width="150">
+    </a>
+    <figcaption>Stephen King</figcaption>
+  </figure>
+  <p><em>IT</em> is a chilling horror novel about fear, friendship, and an ancient evil lurking in Derry.</p>
+  <a href="horror.html" class="genre-tag">Horror</a>
+</article>
+
+  </div>
+</section>
+
+
+        <aside>
+            <blockquote>
+                “A reader lives a thousand lives before he dies. The man who never reads lives only one.” 
+                — George R.R. Martin
+            </blockquote>
+        </aside>
+    </main>
+
+    <footer class="footer">
+  <div class="footer-content">
+    <h2>Contact Us</h2>
+    <p>Email: support@readrate.com</p>
+    <p>Follow us:</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="copy">&copy; 2025 Read & Rate. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

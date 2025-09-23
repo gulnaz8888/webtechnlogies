@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Genres - Read & Rate</title>
+  <link rel="stylesheet" href="Mainstyle.css">
+  <link rel="icon" href="book-icon.png" type="image/png">
+  
+  <!-- Подключаем иконки поиска -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+  <header>
+
+    <div class="left">
+      <div class="logo">Read <span class="emerald">&</span> Rate</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="genres.html">Genres</a>
+        <a href="Review.html">Reviews</a>
+        <a href="#">Top</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+
+    <div class="right">
+      <form>
+        <input type="text" placeholder="Search here..">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+      <a href="#" class="login"><i class="fas fa-user"></i> Login</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Our Reading Club</h1>
+
+    <!-- Таблица -->
+    <section>
+      <h2>Club Reading Schedule</h2>
+      <table>
+        <tr>
+          <th>Book</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Manager</th>
+        </tr>
+        <tr>
+          <td>The Hobbit</td>
+          <td><time datetime="2025-03-05">March 5, 2025</time></td>
+          <td>18:00</td>
+          <td>Ulan Maksat</td>
+        </tr>
+        <tr>
+          <td>Little Women</td>
+          <td><time datetime="2025-03-12">March 12, 2025</time></td>
+          <td>18:00</td>
+          <td>Aknur Ondasyn</td>
+        </tr>
+        <tr>
+          <td>Notebook</td>
+          <td><time datetime="2025-03-19">March 19, 2025</time></td>
+          <td>18:00</td>
+          <td>Gulnaz Yeskermes</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Контакты -->
+    <section>
+      <h2>Club Contacts</h2>
+      <address>
+        <img src="gps.png" alt="Contact Us" width="20"> Address: Mangilik El Avenue C1, Astana, Kazakhstan <br>
+        <img src="email.png" alt="Contact Us" width="20"> Email: <a href="mailto:club@readrate.com">club@readrate.com</a><br>
+        <img src="contact.png" alt="Contact Us" width="18"> Phone: +7 (708) 123 45 67
+        
+         
+      </address>
+    </section>
+
+    <!-- Менеджеры (float) -->
+    <section>
+      <h2>Club Managers</h2>
+      <div class="manager">
+        <img src="manager1.jpg" alt="Ulan" class="float-img">
+        <p><strong>Ulan Maksat</strong> – organizes the <mark>Fantasy Club</mark>. He is passionate about Tolkien and the world of magical adventures. Ulan loves guiding readers through epic quests, mythical creatures, and heroic journeys, making every meeting feel like a trip to another realm. <br><br>The <mark>Fantasy Club</mark> invites readers to explore magical worlds, epic adventures, and legendary heroes. From Tolkien’s Middle-earth to modern fantasy novels, members share their love for imagination, mythical creatures, and storytelling that transports us beyond reality.
+</p>
+        <div style="clear: both;"></div>
+      </div>
+      <div class="manager">
+        <img src="manager2.jpg" alt="Aknur" class="float-img">
+        <p><strong>Aknur Ondasyn</strong> – hosts the <mark>Classics Club</mark>. She is always ready to discuss world literature, from ancient epics to modern masterpieces. Aknur values deep conversations about themes, characters, and history, inspiring members to see timeless works in a new light. <br><br> The <mark>Classics Club</mark> is dedicated to timeless masterpieces of world literature. Here, members revisit great authors, analyze historical contexts, and discuss how classical works continue to shape our understanding of culture, society, and human nature.</p>
+        <div style="clear: both;"></div>
+      </div>
+      <div class="manager">
+        <img src="manager3.jpg" alt="Gulnaz" class="float-img">
+        <p><strong>Gulnaz Yeskermes</strong> – hosts the <mark>Romance Club</mark>.She enjoys exploring stories about love, emotions, and human relationships. Gulnaz creates a warm, welcoming atmosphere where members can share feelings, discuss heartfelt novels, and connect over timeless tales of passion and devotion.<br><br>The <mark>Romance Club</mark> is a space for those who love stories of love, passion, and emotional journeys. Members explore both classic and contemporary romance novels, discussing themes of relationships, personal growth, and the universal search for connection.</p>
+        <div style="clear: both;"></div>
+      </div>
+    </section>
+
+    <!-- OL список -->
+    <section>
+      <h2>How to Join</h2>
+      <ol>
+        <li>Fill out the <a href="contact.html">registration</a> form.</li>
+        <li>Choose your favorite genre club and write it to the message line.</li>
+        <li>Managers will contact you in a few days with explanations.</li>
+        <li>Attend the first meeting.</li>
+      </ol>
+    </section>
+
+    <!-- Пожертвование -->
+    <section>
+      <h2>Donate to the Readers’ Fund</h2>
+      <p>Your support helps us buy new books and organize events.</p>
+      <form>
+        <label>Amount (KZT):</label>
+        <input type="number" min="100" step="100" value="1000">
+        <button type="submit">Donate</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="footer-content">
+    <h2>Contact Us</h2>
+    <p>Email: support@readrate.com</p>
+    <p>Follow us:</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="copy">&copy; 2025 Read & Rate. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
