@@ -15,7 +15,6 @@ h1, h2 {
   color: darkgreen;
 }
 
-/* Таблица */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -37,7 +36,6 @@ tr:nth-child(even) {
   background: #f0f8f0;
 }
 
-/* Address */
 address {
   font-style: normal;
   background: #f9f9f9;
@@ -46,7 +44,6 @@ address {
   border-radius: 6px;
 }
 
-/* Менеджеры */
 .manager {
   margin: 20px 0;
 }
@@ -60,7 +57,6 @@ address {
   border: 2px solid #197036;
 }
 
-/* Donate form */
 form {
   margin-top: 10px;
 }
@@ -84,3 +80,4 @@ button {
 button:hover {
   background: #145a2c;
 }
+
