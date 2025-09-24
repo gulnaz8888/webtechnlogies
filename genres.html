@@ -5,12 +5,9 @@
   <title>Genres - Read & Rate</title>
   <link rel="stylesheet" href="Mainstyle.css">
   <link rel="icon" href="book-icon.png" type="image/png">
-  
-  <!-- Подключаем иконки поиска -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* Сетка для книг */
     .books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -19,11 +16,10 @@
 }
 
 
-    /* Карточка книги */
     article.heavy-rounded {
       background: #28562d;
-      border-radius: 15px; /* закругленные углы */
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* мягкая тень */
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 20px;
       width: 280px;
       text-align: center;
@@ -38,10 +34,8 @@
 }
 
 article.heavy-rounded a:hover {
-  color: #ffd700; /* золотистый при наведении */
-}
+  color: #ffd700;
 
-    /* Эффект при наведении */
     article.heavy-rounded:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
@@ -66,7 +60,6 @@ article.heavy-rounded a:hover {
       margin-bottom: 15px;
     }
 
-    /* Ссылки в Popular Genres */
 .genre-list ul {
   list-style: none;
   padding: 0;
@@ -81,18 +74,16 @@ article.heavy-rounded a:hover {
   font-size: 15px;
   font-weight: 600;
   color: white;
-  background: #197036;  /* зелёный фон */
+  background: #197036; 
   border-radius: 20px;
   text-decoration: none;
   transition: background 0.3s;
 }
 
 .genre-list ul li a:hover {
-  background: #145a2c; /* темнее при наведении */
+  background: #145a2c;
 }
 
-
-    /* Жанровая ссылка (тэг) */
     .genre-tag {
       display: inline-block;
       padding: 6px 14px;
@@ -109,13 +100,12 @@ article.heavy-rounded a:hover {
       background: #208142;
     }
 
-    /* Оформление цитаты */
 aside {
   margin: 40px auto;
   max-width: 800px;
   padding: 20px 30px;
   background: #f9f9f9;
-  border-left: 6px solid #197036; /* зелёная полоса слева */
+  border-left: 6px solid #197036;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -148,20 +138,18 @@ aside blockquote::after {
 }
 
 figure figcaption {
-  font-size: 1.2em;     /* размер чуть больше обычного текста */
-  color: #ffffff;          /* тёмно-серый (можно заменить на свой цвет) */
-  margin-top: 8px;      /* небольшой отступ сверху */
-  text-align: center;   /* выравнивание по центру */
-  font-weight: 500;     /* немного жирнее */
+  font-size: 1.2em;    
+  color: #ffffff;        
+  margin-top: 8px;   
+  text-align: center;  
+  font-weight: 500;  
 }
 
 
 </style>
 </head>
 <body>
-  <!-- Шапка -->
   <header>
-
     <div class="left">
       <div class="logo">Read <span class="emerald">&</span> Rate</div>
       <nav>
@@ -211,7 +199,7 @@ figure figcaption {
                 <a href="fantasy.html" class="genre-tag">Fantasy</a>
                 </article>
 
-    <!-- Книга 2 -->
+
     <article class="heavy-rounded">
       <h3><a href="sherlock.html">Sherlock Holmes</a></h3>
       <figure>
@@ -224,7 +212,6 @@ figure figcaption {
       <a href="mystery.html" class="genre-tag">Mystery</a>
     </article>
 
-    <!-- Книга 3 -->
     <article class="heavy-rounded">
       <h3><a href="littlewomen.html">Little Women</a></h3>
       <figure>
@@ -249,7 +236,6 @@ figure figcaption {
       <a href="romance.html" class="genre-tag">Romance</a>
     </article>
 
-    <!-- The Martian -->
 <article class="heavy-rounded">
   <h3><a href="themartian.html">The Martian</a></h3>
   <figure>
@@ -262,7 +248,6 @@ figure figcaption {
   <a href="scifi.html" class="genre-tag">Science Fiction</a>
 </article>
 
-<!-- A Short History of Nearly Everything -->
 <article class="heavy-rounded">
   <h3><a href="shorthistory.html">A Short History of Nearly Everything</a></h3>
   <figure>
@@ -275,7 +260,7 @@ figure figcaption {
   <a href="nonfiction.html" class="genre-tag">Non-fiction</a>
 </article>
 
-<!-- Three Comrades -->
+
 <article class="heavy-rounded">
   <h3><a href="threecomrades.html">Three Comrades</a></h3>
   <figure>
@@ -288,7 +273,7 @@ figure figcaption {
   <a href="fiction.html" class="genre-tag">Fiction</a>
 </article>
 
-<!-- IT -->
+
 <article class="heavy-rounded">
   <h3><a href="it.html">IT</a></h3>
   <figure>
@@ -328,3 +313,4 @@ figure figcaption {
 </footer>
 </body>
 </html>
+
