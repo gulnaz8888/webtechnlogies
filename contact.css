@@ -57,7 +57,6 @@ header h1 {
   background: #0b5c0b;
 }
 
-/* Правая часть */
 .contact-info {
   background: #f0f8f0;
   border-left: 4px solid darkgreen;
@@ -89,10 +88,9 @@ header h1 {
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
-
-/* Адаптив */
 @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
   }
 }
+
