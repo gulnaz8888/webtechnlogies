@@ -1,7 +1,24 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;  
   background: #f9f9f9;
+}
+
+h1, h2 {
+  font-family: "Times New Roman", serif;  
+}
+
+blockquote {
+  font-family: "Courier New", monospace; 
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 40px;
 }
 
 header {
@@ -99,11 +116,8 @@ nav a.active::after {
   top: 0;
   right: 5px;
   cursor: pointer;
-}
-
-.right button i {
+  font-size: 18px; 
   color: #324b4e;
-  font-size: 15px;
 }
 
 .login {
@@ -393,6 +407,52 @@ nav a.active::after {
   background: #50C878;
 }
 
+#donate-section {
+  max-width: 600px;       
+  margin: 60px auto;     
+  padding: 30px;
+  background: #ffffff;   
+  border-radius: 12px;    
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+  text-align: center;
+}
+
+#donate-section h2 {
+  color: #197036;
+  margin-bottom: 20px;
+}
+
+#donate-section .highlight {
+  color: #197036;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#donate-section form {
+  margin-top: 15px;
+}
+
+#donate-section input[type="number"] {
+  padding: 8px 12px;
+  border: 2px solid #197036;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#donate-section button {
+  padding: 8px 16px;
+  background: #197036;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#donate-section button:hover {
+  background: #50C878;
+}
 
 .footer {
   background: #2c3e50;
@@ -414,20 +474,6 @@ nav a.active::after {
   font-size: 16px;
 }
 
-.social-icons {
-  margin: 15px 0;
-}
-
-.social-icons a {
-  color: white;
-  font-size: 20px;
-  margin: 0 10px;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #50C878;
-}
 
 .footer .copy {
   margin-top: 20px;
