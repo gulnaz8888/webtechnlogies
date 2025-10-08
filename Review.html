@@ -2,93 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read & Rate</title>
+
+ 
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  >
+
+ 
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+
   <link rel="stylesheet" href="Mainstyle.css">
-  <link rel="icon" href="book-icon.png" type="image/png">
-  <title>Book Reviews</title>
-  <link rel="stylesheet" href="reviews.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <body>
-  <header>
 
-    <div class="left">
-      <div class="logo">Read <span class="emerald">&</span> Rate</div>
-      <nav>
-        <a href="index.html" >Home</a>
-        <a href="genres.html">Genres</a>
-        <a href="Review.html" class="active">Reviews</a>
-        <a href="#">Top</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+  
+  <nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Read & Rate</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="right">
-      <form>
-        <input type="text" placeholder="Search here..">
-        <button type="submit">🔍</button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="genres.html">Genres</a></li>
+        <li class="nav-item"><a class="nav-link active" href="Review.html">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="top.html">Top</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <form class="d-flex me-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search here..">
+        <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
       </form>
-      <a href="#" class="login">👤 Login</a>
-    </div>
-  </header>
-  <main class="reviews-section">
-    <h1>Book Reviews</h1>
 
-    <div class="review-card">
-      <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" alt="The Harry Potter">
-      <div class="review-content">
-        <h2>The Harry Potter</h2>
-        <p class="author">by J.R.R. Tolkien</p>
-        <blockquote>
-          “A magical adventure that feels timeless. Loved every page!”
-        </blockquote>
-        <div class="review-meta">
-          <span class="stars">★★★★★</span>
-          <span class="reviewer">– Alexey, <time datetime="2025-09-23">Sep 23, 2025</time></span>
+      <a href="#" class="btn btn-warning"><i class="fas fa-user"></i> Login</a>
+    </div>
+  </div>
+</nav>
+
+ 
+  <main class="container my-5">
+    <h1 class="text-center mb-4">Book Reviews</h1>
+
+
+    <div class="card mb-4 shadow-sm">
+      <div class="row g-0">
+        <div class="col-md-3">
+          <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" class="img-fluid rounded-start" alt="The Harry Potter">
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <h2 class="card-title">The Harry Potter</h2>
+            <p class="text-muted mb-2">by J.R.R. Tolkien</p>
+            <blockquote class="blockquote">
+              “A magical adventure that feels timeless. Loved every page!”
+            </blockquote>
+            <p><span class="text-warning">★★★★★</span></p>
+            <small class="text-secondary">– Alexey, <time datetime="2025-09-23">Sep 23, 2025</time></small>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="review-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykYK_AIlq6iyGWcehw0Vj8JFyEYyk9_AOXQ&s" alt="IT">
-      <div class="review-content">
-        <h2>IT</h2>
-        <p class="author">by Stephen King</p>
-        <blockquote>
-          “Creepy, intense and brilliant storytelling. Not for the faint of heart!”
-        </blockquote>
-        <div class="review-meta">
-          <span class="stars">★★★★☆</span>
-          <span class="reviewer">– Marina, <time datetime="2025-09-21">Sep 21, 2025</time></span>
+
+    <div class="card mb-4 shadow-sm">
+      <div class="row g-0">
+        <div class="col-md-3">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykYK_AIlq6iyGWcehw0Vj8JFyEYyk9_AOXQ&s" class="img-fluid rounded-start" alt="IT">
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <h2 class="card-title">IT</h2>
+            <p class="text-muted mb-2">by Stephen King</p>
+            <blockquote class="blockquote">
+              “Creepy, intense and brilliant storytelling. Not for the faint of heart!”
+            </blockquote>
+            <p><span class="text-warning">★★★★☆</span></p>
+            <small class="text-secondary">– Marina, <time datetime="2025-09-21">Sep 21, 2025</time></small>
+          </div>
         </div>
       </div>
     </div>
-    <section class="add-review">
-      <h2>Leave a Review</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Book Title" required>
-        <textarea placeholder="Your Review" required></textarea>
-        <label>Rating:</label>
-        <select required>
-          <option value="5">★★★★★ (5)</option>
-          <option value="4">★★★★☆ (4)</option>
-          <option value="3">★★★☆☆ (3)</option>
-          <option value="2">★★☆☆☆ (2)</option>
-          <option value="1">★☆☆☆☆ (1)</option>
-        </select>
-        <button type="submit">Submit Review</button>
+
+
+    <section class="mt-5">
+      <h2 class="text-center mb-3">Leave a Review</h2>
+      <form class="card p-4 shadow-sm">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="col-12">
+            <input type="text" class="form-control" placeholder="Book Title" required>
+          </div>
+          <div class="col-12">
+            <textarea class="form-control" placeholder="Your Review" rows="4" required></textarea>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Rating:</label>
+            <select class="form-select" required>
+              <option value="5">★★★★★ (5)</option>
+              <option value="4">★★★★☆ (4)</option>
+              <option value="3">★★★☆☆ (3)</option>
+              <option value="2">★★☆☆☆ (2)</option>
+              <option value="1">★☆☆☆☆ (1)</option>
+            </select>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-success px-4 mt-2">Submit Review</button>
+          </div>
+        </div>
       </form>
     </section>
   </main>
-  <footer class="footer">
-    <div class="footer-content">
-      <h2>Contact Us</h2>
-      <p>Email: support@readrate.com</p>
-      <p>Social media: @ReadRate</p>
-      <p class="copy">&copy; 2025 Read & Rate. All rights reserved.</p>
+
+
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container text-center">
+      <h2>Read & Rate</h2>
+      <p>Discover, review and share your favorite books.</p>
+      <div class="d-flex justify-content-center gap-3 mb-3">
+        <a href="#" class="text-light"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="#" class="text-light"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="#" class="text-light"><i class="fab fa-instagram fa-lg"></i></a>
+      </div>
+      <p class="mb-0">&copy; 2025 Read & Rate. All rights reserved.</p>
     </div>
   </footer>
 
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
