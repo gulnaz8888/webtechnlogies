@@ -1,164 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Reading Club</title>
-    <link rel="stylesheet" href="Mainstyle.css">
-    <link rel="stylesheet" href="club.css">
-    <link rel="icon" href="book-icon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read & Rate — Club</title>
+
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="Mainstyle.css">
+  <link rel="stylesheet" href="club.css">
 </head>
+
 <body>
-<header>
-    <div class="left">
-        <div class="logo">Read <span class="emerald">&</span> Rate</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="genres.html">Genres</a>
-            <a href="Review.html">Reviews</a>
-            <a href="#">Top</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
-    </div>
-    <div class="right">
-        <form>
-            <input type="text" placeholder="Search here..">
-            <button type="submit">🔍</button>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Read & Rate</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="genres.html">Genres</a></li>
+          <li class="nav-item"><a class="nav-link" href="Review.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="top.html">Top</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+
+        <form class="d-flex me-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search here..">
+          <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
         </form>
-        <a href="#" class="login">👤 Login</a>
+
+        <a href="#" class="btn btn-warning"><i class="fas fa-user"></i> Login</a>
+      </div>
     </div>
-</header>
+  </nav>
 
-<main>
-    <h1>Our Reading Club</h1>
+  <main class="py-5">
+    <div class="container">
+      <h1 class="text-center mb-5">Our Reading Club</h1>
 
-
-    <section>
+      <section class="mb-5">
         <h2>Club Reading Schedule</h2>
-        <table>
-            <tr>
+        <div class="table-responsive">
+          <table class="table table-striped align-middle">
+            <thead class="table-warning">
+              <tr>
                 <th>Book</th>
                 <th>Date</th>
                 <th>Time</th>
                 <th>Manager</th>
-            </tr>
-            <tr>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
                 <td>The Hobbit</td>
                 <td><time datetime="2025-03-05">March 5, 2025</time></td>
                 <td>18:00</td>
                 <td>Ulan Maksat</td>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
                 <td>Little Women</td>
                 <td><time datetime="2025-03-12">March 12, 2025</time></td>
                 <td>18:00</td>
                 <td>Aknur Ondasyn</td>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
                 <td>Notebook</td>
                 <td><time datetime="2025-03-19">March 19, 2025</time></td>
                 <td>18:00</td>
                 <td>Gulnaz Yeskermes</td>
-            </tr>
-        </table>
-    </section>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-
-    <section>
+      <section class="mb-5">
         <h2>Club Contacts</h2>
         <address>
-            <img src="gps.png" alt="Contact Us" width="20"> Address: Mangilik El Avenue C1, Astana, Kazakhstan <br>
-            <img src="email.png" alt="Contact Us" width="20"> Email: <a href="mailto:club@readrate.com">club@readrate.com</a><br>
-            <img src="contact.png" alt="Contact Us" width="18"> Phone: +7 (708) 123 45 67
+          <p><img src="gps.png" alt="Location" width="20"> Address: Mangilik El Avenue C1, Astana, Kazakhstan</p>
+          <p><img src="email.png" alt="Email" width="20"> Email: <a href="mailto:club@readrate.com">club@readrate.com</a></p>
+          <p><img src="contact.png" alt="Phone" width="18"> Phone: +7 (708) 123 45 67</p>
         </address>
-    </section>
+      </section>
 
-
-    <section>
+      <section class="mb-5">
         <h2>Club Managers</h2>
-        <div class="profile-card">
-            <img src="manager1.jpg" alt="Ulan" class="avatar">
-            <div class="info">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="profile-card">
+              <img src="manager1.jpg" alt="Ulan" class="avatar">
+              <div class="info">
                 <h3 class="name">Ulan Maksat</h3>
                 <p class="role">Organizer – Fantasy Club</p>
-                <p>He is passionate about Tolkien and the world of magical adventures. Ulan loves guiding readers through epic quests, mythical creatures, and heroic journeys, making every meeting feel like a trip to another realm.</p>
+                <p>He is passionate about Tolkien and magical adventures. Ulan loves guiding readers through epic quests, mythical creatures, and heroic journeys.</p>
+              </div>
             </div>
-        </div>
-        <div class="profile-card">
-            <img src="manager2.jpg" alt="Aknur" class="avatar">
-            <div class="info">
+          </div>
+
+          <div class="col-md-4">
+            <div class="profile-card">
+              <img src="manager2.jpg" alt="Aknur" class="avatar">
+              <div class="info">
                 <h3 class="name">Aknur Ondasyn</h3>
                 <p class="role">Host – Classics Club</p>
-                <p>She is always ready to discuss world literature, from ancient epics to modern masterpieces. Aknur values deep conversations about themes, characters, and history, inspiring members to see timeless works in a new light.</p>
+                <p>She discusses world literature — from ancient epics to modern masterpieces. Aknur inspires deep conversations about timeless works.</p>
+              </div>
             </div>
-        </div>
-        <div class="profile-card">
-            <img src="manager3.jpg" alt="Gulnaz" class="avatar">
-            <div class="info">
+          </div>
+
+          <div class="col-md-4">
+            <div class="profile-card">
+              <img src="manager3.jpg" alt="Gulnaz" class="avatar">
+              <div class="info">
                 <h3 class="name">Gulnaz Yeskermes</h3>
                 <p class="role">Host – Romance Club</p>
-                <p>She enjoys exploring stories about love, emotions, and human relationships. Gulnaz creates a warm, welcoming atmosphere where members can share feelings, discuss heartfelt novels, and connect over timeless tales of passion and devotion.</p>
+                <p>She explores stories about love and emotions. Gulnaz creates a warm atmosphere where readers connect over heartfelt novels.</p>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
 
-    <section>
+      <section class="mb-5">
         <h2>How to Join</h2>
         <ol>
-            <li>Fill out the <a href="contact.html">registration</a> form.</li>
-            <li>Choose your favorite genre club and write it to the message line.</li>
-            <li>Managers will contact you in a few days with explanations.</li>
-            <li>Attend the first meeting.</li>
+          <li>Fill out the <a href="contact.html">registration</a> form.</li>
+          <li>Choose your favorite genre and mention it in the message line.</li>
+          <li>Managers will contact you within a few days.</li>
+          <li>Attend the first meeting.</li>
         </ol>
-    </section>
+      </section>
 
 
-    <section>
+      <section class="mb-5">
         <h2>Donate to the Readers’ Fund</h2>
         <p>Your support helps us buy new books and organize events.</p>
-        <form>
-            <label>Amount (KZT):</label>
-            <input type="number" min="100" step="100" value="1000">
-            <button type="submit">Donate</button>
+        <form class="d-flex flex-column flex-sm-row gap-2 align-items-start">
+          <label class="form-label me-2">Amount (KZT):</label>
+          <input type="number" class="form-control w-auto" min="100" step="100" value="1000">
+          <button type="submit" class="btn btn-warning">Donate</button>
         </form>
-    </section>
+      </section>
 
-
-    <section>
+      <section class="mb-5">
         <h2>What Our Club Says</h2>
 
         <div class="text-demo text-left" data-label="Member's Thought">
-            <p>"I love discovering new worlds through our Fantasy Club meetings!"</p>
+          <p>"I love discovering new worlds through our Fantasy Club meetings!"</p>
         </div>
 
         <div class="text-demo text-center" data-label="Club Motto">
-            <p>"Read & Rate – where every story finds its reader."</p>
+          <p>"Read & Rate – where every story finds its reader."</p>
         </div>
 
         <div class="text-demo text-right" data-label="Organiser's Note">
-            <p>— Ulan Maksat, Fantasy Club Organizer</p>
+          <p>— Ulan Maksat, Fantasy Club Organizer</p>
         </div>
 
         <div class="text-demo text-justify" data-label="Our Mission">
-            <p>
-                Our Reading Club is dedicated to bringing people together through
-                books. We believe in the power of stories to inspire, educate,
-                and connect. Each meeting is an opportunity to explore different
-                genres, cultures, and perspectives – side by side.
-            </p>
+          <p>Our Reading Club brings people together through books. Each meeting is an opportunity to explore different genres, cultures, and perspectives.</p>
         </div>
-    </section>
-
-</main>
-
-<footer class="footer">
-    <div class="footer-content">
-        <h2>Contact Us</h2>
-        <p>Email: support@readrate.com</p>
-        <p>Follow us:</p>
-        <p>Social media: @ReadRate</p>
-        <p class="copy">&copy; 2025 Read & Rate. All rights reserved.</p>
+      </section>
     </div>
-</footer>
+  </main>
+
+  <footer class="footer mt-auto">
+    <div class="footer-content text-center py-4">
+      <h2>Contact Us</h2>
+      <p>Email: support@readrate.com</p>
+      <p>Follow us:</p>
+      <div class="social-icons mb-2">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="copy mb-0">&copy; 2025 Read & Rate. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
