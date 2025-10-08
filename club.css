@@ -104,7 +104,7 @@ button:hover {
 }
 
 .text-demo {
-    background: #fcfcf7; 
+    background: #fcfcf7; /* РЅРµР¶РЅС‹Р№ РѕС‚С‚РµРЅРѕРє Р±СѓРјР°РіРё */
     border: 1px solid #e2e2d8;
     border-radius: 10px;
     padding: 16px 20px;
@@ -120,6 +120,7 @@ button:hover {
     box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
+/* РјРёРЅРё-Р·Р°РіРѕР»РѕРІРѕРє-Р±РµР№РґР¶ */
 .text-demo::before {
     content: attr(data-label);
     display: inline-block;
