@@ -4,6 +4,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  transition: background 0.4s, color 0.4s;
 }
 
 header h1 {
@@ -40,6 +41,16 @@ header h1 {
   border-radius: 6px;
   padding: 10px;
   font-size: 1em;
+  background: #fff;
+  color: #333;
+  transition: background 0.3s, border 0.3s, color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00c896;
+  outline: none;
+  background: #f9fffc;
 }
 
 .contact-form button {
@@ -50,19 +61,21 @@ header h1 {
   padding: 12px;
   font-size: 1em;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .contact-form button:hover {
   background: #0b5c0b;
+  transform: scale(1.03);
 }
 
-/* РџСЂР°РІР°СЏ С‡Р°СЃС‚СЊ */
+/* Правая часть */
 .contact-info {
   background: #f0f8f0;
   border-left: 4px solid darkgreen;
   padding: 20px;
   border-radius: 8px;
+  transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 .contact-info h3 {
@@ -90,7 +103,69 @@ header h1 {
 }
 
 
-/* РђРґР°РїС‚РёРІ */
+body.dark-mode {
+  background-color: #121a14;
+  color: #e6e6e6; 
+}
+
+body.dark-mode header h1 {
+  color: #5cff9c; 
+}
+
+body.dark-mode .contact-form h2 {
+  color: #5cff9c;
+}
+
+body.dark-mode .contact-form p {
+  color: #cfcfcf; 
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: #1d2b23; 
+  color: #eaeaea;
+  border: 1px solid #3a5444;
+}
+
+body.dark-mode .contact-form input:focus,
+body.dark-mode .contact-form textarea:focus {
+  border-color: #5cff9c;
+  background: #22372b;
+}
+
+body.dark-mode .contact-form button {
+  background: #2ecc71;
+  color: #fff;
+}
+
+body.dark-mode .contact-form button:hover {
+  background: #27ae60;
+  transform: scale(1.03);
+}
+
+body.dark-mode .contact-info {
+  background: #1d2b23;
+  border-left-color: #5cff9c;
+  color: #dcdcdc;
+}
+
+body.dark-mode .contact-info h3 {
+  color: #5cff9c;
+}
+
+body.dark-mode .join-btn {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 255, 150, 0.2);
+}
+
+body.dark-mode .join-btn:hover {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 255, 150, 0.3);
+}
+
+
 @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
