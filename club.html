@@ -4,15 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Read & Rate — Club</title>
-
-  <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-    rel="stylesheet">
-
-  <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="Mainstyle.css">
   <link rel="stylesheet" href="club.css">
 </head>
@@ -20,6 +13,7 @@
 <body>
   <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container">
+      <button id="themeToggle" class="theme-toggle">🌙</button>
       <a class="navbar-brand fw-bold" href="index.html">Read & Rate</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -39,15 +33,149 @@
           <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
         </form>
 
-        <a href="#" class="btn btn-warning"><i class="fas fa-user"></i> Login</a>
+        <a href="#" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+        <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerModal">
+          <i class="fas fa-user-plus"></i> Register
+        </a>
       </div>
     </div>
   </nav>
 
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="loginEmail" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" required>
+              <div class="invalid-feedback">Password must be at least 8 characters.</div>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Register</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="regName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="regName" required>
+              <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="regEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="regEmail" required>
+              <div class="invalid-feedback">Enter a valid email address.</div>
+            </div>
+            <div class="mb-3">
+              <label for="regPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="regPassword" required>
+              <div class="invalid-feedback">Password must be at least 8 characters.</div>
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" required>
+              <div class="invalid-feedback">Passwords do not match.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail');
+      const password = document.getElementById('loginPassword');
+      let valid = true;
+
+      [email, password].forEach(input => input.classList.remove('is-invalid'));
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.value.match(emailPattern)) {
+        email.classList.add('is-invalid');
+        valid = false;
+      }
+
+      if (password.value.length < 8) {
+        password.classList.add('is-invalid');
+        valid = false;
+      }
+
+      if (valid) {
+        alert("✅ Login successful!");
+        this.reset();
+        const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+        modal.hide();
+      }
+    });
+
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName');
+      const email = document.getElementById('regEmail');
+      const password = document.getElementById('regPassword');
+      const confirmPassword = document.getElementById('confirmPassword');
+      let valid = true;
+
+      [name, email, password, confirmPassword].forEach(input => input.classList.remove('is-invalid'));
+
+      if (name.value.trim() === '') {
+        name.classList.add('is-invalid');
+        valid = false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.value.match(emailPattern)) {
+        email.classList.add('is-invalid');
+        valid = false;
+      }
+
+      if (password.value.length < 8) {
+        password.classList.add('is-invalid');
+        valid = false;
+      }
+
+      if (confirmPassword.value !== password.value) {
+        confirmPassword.classList.add('is-invalid');
+        valid = false;
+      }
+
+      if (valid) {
+        alert("🎉 Registration successful!");
+        this.reset();
+        const modal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+        modal.hide();
+      }
+    });
+  </script>
+
   <main class="py-5">
     <div class="container">
       <h1 class="text-center mb-5">Our Reading Club</h1>
-
       <section class="mb-5">
         <h2>Club Reading Schedule</h2>
         <div class="table-responsive">
@@ -100,29 +228,27 @@
             <div class="profile-card">
               <img src="manager1.jpg" alt="Ulan" class="avatar">
               <div class="info">
-                <h3 class="name">Ulan Maksat</h3>
+                <h4 class="name">Ulan Maksat</h4>
                 <p class="role">Organizer – Fantasy Club</p>
                 <p>He is passionate about Tolkien and magical adventures. Ulan loves guiding readers through epic quests, mythical creatures, and heroic journeys.</p>
               </div>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="profile-card">
               <img src="manager2.jpg" alt="Aknur" class="avatar">
               <div class="info">
-                <h3 class="name">Aknur Ondasyn</h3>
+                <h4 class="name">Aknur Ondasyn</h4>
                 <p class="role">Host – Classics Club</p>
                 <p>She discusses world literature — from ancient epics to modern masterpieces. Aknur inspires deep conversations about timeless works.</p>
               </div>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="profile-card">
               <img src="manager3.jpg" alt="Gulnaz" class="avatar">
               <div class="info">
-                <h3 class="name">Gulnaz Yeskermes</h3>
+                <h4 class="name">Gulnaz Yeskermes</h4>
                 <p class="role">Host – Romance Club</p>
                 <p>She explores stories about love and emotions. Gulnaz creates a warm atmosphere where readers connect over heartfelt novels.</p>
               </div>
@@ -130,7 +256,6 @@
           </div>
         </div>
       </section>
-
 
       <section class="mb-5">
         <h2>How to Join</h2>
@@ -141,7 +266,6 @@
           <li>Attend the first meeting.</li>
         </ol>
       </section>
-
 
       <section class="mb-5">
         <h2>Donate to the Readers’ Fund</h2>
@@ -155,19 +279,15 @@
 
       <section class="mb-5">
         <h2>What Our Club Says</h2>
-
         <div class="text-demo text-left" data-label="Member's Thought">
           <p>"I love discovering new worlds through our Fantasy Club meetings!"</p>
         </div>
-
         <div class="text-demo text-center" data-label="Club Motto">
           <p>"Read & Rate – where every story finds its reader."</p>
         </div>
-
         <div class="text-demo text-right" data-label="Organiser's Note">
           <p>— Ulan Maksat, Fantasy Club Organizer</p>
         </div>
-
         <div class="text-demo text-justify" data-label="Our Mission">
           <p>Our Reading Club brings people together through books. Each meeting is an opportunity to explore different genres, cultures, and perspectives.</p>
         </div>
@@ -175,20 +295,62 @@
     </div>
   </main>
 
-  <footer class="footer mt-auto">
-    <div class="footer-content text-center py-4">
-      <h2>Contact Us</h2>
-      <p>Email: support@readrate.com</p>
-      <p>Follow us:</p>
-      <div class="social-icons mb-2">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+  <footer class="bg-dark text-light py-5 mt-5 w-100">
+  <div class="container-fluid"> 
+    <div class="row justify-content-center px-3">
+  
+      <div class="col-12 col-md-6 mb-4">
+        <h2 class="fw-bold mb-2">Read & Rate</h2>
+        <p class="fst-italic mb-3">“Every story deserves to be heard — and rated.”</p>
+
+        <div class="d-flex gap-3">
+          <a href="#" class="text-light"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-tiktok fa-lg"></i></a>
+        </div>
       </div>
-      <p class="copy mb-0">&copy; 2025 Read & Rate. All rights reserved.</p>
+
+      <div class="col-12 col-md-5 offset-md-1">
+        <p class="mb-1 text-secondary">Developed by:</p>
+
+        <p class="fw-semibold fs-5 mb-3">
+          <a href="#" class="text-warning text-decoration-none" title="Frontend & Design">Aknur</a> ·
+          <a href="#" class="text-info text-decoration-none" title="JavaScript & Logic">Gulnaz</a> ·
+          <a href="#" class="text-success text-decoration-none" title="UI & Integration">Ulan</a>
+        </p>
+
+        <div class="row small text-secondary g-1">
+          <div class="col-6">Aknur — JavaScript & Logic </div>
+          <div class="col-6">Gulnaz — Frontend & DesignJ</div>
+          <div class="col-6">Ulan — UI & Integration</div>
+        </div>
+
+        <p class="text-secondary small mt-3 mb-0">
+          &copy; 2025 Read & Rate — made with ❤️ for book lovers everywhere.
+        </p>
+      </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+
+ 
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    themeToggle.textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
 </body>
 </html>
