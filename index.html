@@ -11,45 +11,51 @@
     rel="stylesheet"
   >
 
- 
+
   <link 
     rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
   >
 
-
+ 
   <link rel="stylesheet" href="Mainstyle.css">
 </head>
 
 <body>
 
- 
-  <nav class="navbar navbar-expand-lg custom-navbar">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Read & Rate</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="genres.html">Genres</a></li>
-        <li class="nav-item"><a class="nav-link" href="Review.html">Reviews</a></li>
-        <li class="nav-item"><a class="nav-link" href="top.html">Top</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container">
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+      <a class="navbar-brand fw-bold" href="index.html">Read & Rate</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <form class="d-flex me-3" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search here..">
-        <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
-      </form>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="genres.html">Genres</a></li>
+          <li class="nav-item"><a class="nav-link" href="Review.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="top.html">Top</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
 
-      <a href="#" class="btn btn-warning"><i class="fas fa-user"></i> Login</a>
+        <form class="d-flex me-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search here..">
+          <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+
+
+        <a href="#" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+        <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerModal">
+          <i class="fas fa-user-plus"></i> Register
+        </a>
+      </div>
     </div>
-  </div>
-</nav>
-
+  </nav>
 
 
   <main>
@@ -62,7 +68,7 @@
       </div>
     </section>
 
-
+   
     <section class="books-section py-5">
       <div class="container">
         <h2 class="mb-4">You Might Also Like</h2>
@@ -99,117 +105,438 @@
       </div>
     </section>
 
-  
-    <section class="genres-section py-5 bg-light">
-      <div class="container text-center">
-        <div class="row g-3">
-          <div class="col-md-2 col-6">
-            <a href="genres.html" class="btn btn-outline-primary w-100">
-              <i class="fas fa-star"></i><br>Bestsellers of the Year
-            </a>
-          </div>
-          <div class="col-md-2 col-6">
-            <a href="genres.html" class="btn btn-outline-success w-100">
-              <i class="fas fa-book"></i><br>Classics of All Time
-            </a>
-          </div>
-          <div class="col-md-2 col-6">
-            <a href="genres.html" class="btn btn-outline-danger w-100">
-              <i class="fas fa-hat-wizard"></i><br>Fairy Tales for Adults
-            </a>
-          </div>
-          <div class="col-md-2 col-6">
-            <a href="genres.html" class="btn btn-outline-warning w-100">
-              <i class="fas fa-feather"></i><br>Modern Fiction
-            </a>
-          </div>
-          <div class="col-md-2 col-6">
-            <a href="genres.html" class="btn btn-outline-secondary w-100">
-              <i class="fas fa-landmark"></i><br>Historical Novels
-            </a>
-          </div>
-          <div class="col-md-2 col-6">
-            <a href="genres.html" class="btn btn-dark w-100">See All Genres</a>
-          </div>
+ 
+<section class="genres-section py-5">
+    <div class="container text-center">
+        <h2 class="mb-5">Explore Genres</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-2 col-6">
+                <div class="genre-card pastel-blue">
+                    <i class="fas fa-star"></i>
+                    <span>Bestsellers of the Year</span>
+                </div>
+            </div>
+            <div class="col-md-2 col-6">
+                <div class="genre-card pastel-green">
+                    <i class="fas fa-book"></i>
+                    <span>Classics of All Time</span>
+                </div>
+            </div>
+            <div class="col-md-2 col-6">
+                <div class="genre-card pastel-pink">
+                    <i class="fas fa-hat-wizard"></i>
+                    <span>Fairy Tales for Adults</span>
+                </div>
+            </div>
+            <div class="col-md-2 col-6">
+                <div class="genre-card pastel-yellow">
+                    <i class="fas fa-feather"></i>
+                    <span>Modern Fiction</span>
+                </div>
+            </div>
+            <div class="col-md-2 col-6">
+                <div class="genre-card pastel-purple">
+                    <i class="fas fa-landmark"></i>
+                    <span>Historical Novels</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+        
+        <div class="mt-5">
+            <a href="genres.html" class="btn btn-dark btn-lg">
+                <i class="fas fa-arrow-right me-2"></i>See All Genres
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+    <div class="sorting-tool-section">
+        <div class="container">
+            <div class="pastel-card text-center mb-4">
+                <h1 class="display-4 fw-bold">Book Sorting Tool</h1>
+                <p class="lead">Sort your book collection by rating or reading progress</p>
+                <div class="books-count-badge d-inline-block">12 books</div>
+            </div>
+
+            <div class="pastel-card">
+                <h3 class="section-title">Your Book Collection</h3>
+                <div class="sort-buttons-container">
+                    <button id="sortRatingAsc" class="pastel-blue-btn">Rating ↑</button>
+                    <button id="sortRatingDesc" class="pastel-green-btn">Rating ↓</button>
+                    <button id="sortProgressAsc" class="pastel-pink-btn">Progress ↑</button>
+                    <button id="sortProgressDesc" class="pastel-yellow-btn">Progress ↓</button>
+                </div>
+
+                <div class="row" id="originalBooksList">
+                </div>
+            </div>
+
+          <div class="pastel-card">
+  <h3 class="section-title">Sorted Result</h3>
+  <div id="bookSortError" class="result-box mb-4" aria-live="polite"></div>
+  <div id="sortedBooksList" class="list-group"></div>
+</div>
+
+</div> 
+</div> 
 
   
-    <section class="top-rated-section py-5">
-      <div class="container">
-        <div class="top-rated-header text-center mb-4">
-          <h2>Top Rated Books</h2>
-        </div>
-        <div class="row g-4 text-center">
-          <div class="col-md-2">
-            <div class="book-card">
-              <div class="badge bg-warning text-dark">1</div>
-              <img src="littlewomen.jpg" alt="The Little Women" class="img-fluid rounded">
-              <h3 class="mt-2">The Little Women</h3>
-              <p>★★★★★</p>
-              <button class="btn btn-success">Read</button>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="book-card">
-              <div class="badge bg-secondary">2</div>
-              <img src="silentforest.jpg" alt="The Silent Forest" class="img-fluid rounded">
-              <h3 class="mt-2">The Silent Forest</h3>
-              <p>★★★★★</p>
-              <button class="btn btn-success">Read</button>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="book-card">
-              <div class="badge bg-bronze">3</div>
-              <img src="sherlock.jpeg" alt="Sherlock Holmes" class="img-fluid rounded">
-              <h3 class="mt-2">Sherlock Holmes</h3>
-              <p>★★★★★</p>
-              <button class="btn btn-success">Read</button>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="book-card">
-              <div class="badge bg-light text-dark">4</div>
-              <img src="thebookthief.jpeg" alt="The Book Thief" class="img-fluid rounded">
-              <h3 class="mt-2">The Book Thief</h3>
-              <p>★★★★☆</p>
-              <button class="btn btn-success">Read</button>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="book-card">
-              <div class="badge bg-light text-dark">5</div>
-              <img src="dreamcatcher.jpeg" alt="Dreamcatcher" class="img-fluid rounded">
-              <h3 class="mt-2">Dreamcatcher</h3>
-              <p>★★★★☆</p>
-              <button class="btn btn-success">Read</button>
-            </div>
-          </div>
+<section class="top-rated-section py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="mb-0">Top Rated Books</h2>
+      <a href="top.html" class="btn btn-outline-dark see-all-btn">
+        See All Top <i class="fas fa-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <div class="row g-4 text-center">
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="book-card">
+          <div class="badge bg-warning text-dark">1</div>
+          <img src="littlewomen.jpg" alt="The Little Women" class="img-fluid rounded">
+          <h3 class="mt-2">The Little Women</h3>
+          <p>★★★★★</p>
+          <button class="btn btn-success">Read</button>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="book-card">
+          <div class="badge bg-secondary">2</div>
+          <img src="silentforest.jpg" alt="The Silent Forest" class="img-fluid rounded">
+          <h3 class="mt-2">The Silent Forest</h3>
+          <p>★★★★★</p>
+          <button class="btn btn-success">Read</button>
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="book-card">
+          <div class="badge" style="background-color: peru; color: white;">3</div>
+          <img src="sherlock.jpeg" alt="Sherlock Holmes" class="img-fluid rounded">
+          <h3 class="mt-2">Sherlock Holmes</h3>
+          <p>★★★★★</p>
+          <button class="btn btn-success">Read</button>
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="book-card">
+          <div class="badge bg-light text-dark">4</div>
+          <img src="thebookthief.jpeg" alt="The Book Thief" class="img-fluid rounded">
+          <h3 class="mt-2">The Book Thief</h3>
+          <p>★★★★☆</p>
+          <button class="btn btn-success">Read</button>
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="book-card">
+          <div class="badge bg-light text-dark">5</div>
+          <img src="dreamcatcher.jpeg" alt="Dreamcatcher" class="img-fluid rounded">
+          <h3 class="mt-2">Dreamcatcher</h3>
+          <p>★★★★☆</p>
+          <button class="btn btn-success">Read</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
  
-  <footer class="footer bg-dark text-light py-4">
-    <div class="container text-center">
-      <h2>Contact Us</h2>
-      <p>Email: support@readrate.com</p>
-      <p>Follow us:</p>
-      <div class="social-icons mb-2">
-        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+  <footer class="bg-dark text-light py-5 mt-5 w-100">
+  <div class="container-fluid"> 
+    <div class="row justify-content-center px-3">
+  
+      <div class="col-12 col-md-6 mb-4">
+        <h2 class="fw-bold mb-2">Read & Rate</h2>
+        <p class="fst-italic mb-3">“Every story deserves to be heard — and rated.”</p>
+
+        <div class="d-flex gap-3">
+          <a href="#" class="text-light"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-tiktok fa-lg"></i></a>
+        </div>
       </div>
-      <p class="copy">&copy; 2025 Read & Rate. All rights reserved.</p>
+
+      <div class="col-12 col-md-5 offset-md-1">
+        <p class="mb-1 text-secondary">Developed by:</p>
+
+        <p class="fw-semibold fs-5 mb-3">
+          <a href="#" class="text-warning text-decoration-none" title="Frontend & Design">Aknur</a> ·
+          <a href="#" class="text-info text-decoration-none" title="JavaScript & Logic">Gulnaz</a> ·
+          <a href="#" class="text-success text-decoration-none" title="UI & Integration">Ulan</a>
+        </p>
+
+        <div class="row small text-secondary g-1">
+          <div class="col-6">Aknur — JavaScript & Logic </div>
+          <div class="col-6">Gulnaz — Frontend & DesignJ</div>
+          <div class="col-6">Ulan — UI & Integration</div>
+        </div>
+
+        <p class="text-secondary small mt-3 mb-0">
+          &copy; 2025 Read & Rate — made with ❤️ for book lovers everywhere.
+        </p>
+      </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="loginEmail" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" required>
+              <div class="invalid-feedback">Password must be at least 8 characters.</div>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="registerModalLabel"><i class="fas fa-user-plus"></i> User Registration</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm" novalidate>
+            <div class="mb-3">
+              <label for="regName" class="form-label">Full Name</label>
+              <input type="text" id="regName" class="form-control" placeholder="Enter your full name" required>
+              <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
 
-  <script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+            <div class="mb-3">
+              <label for="regEmail" class="form-label">Email Address</label>
+              <input type="email" id="regEmail" class="form-control" placeholder="example@mail.com" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="regPassword" class="form-label">Password</label>
+              <input type="password" id="regPassword" class="form-control" placeholder="Min 8 characters" required minlength="8">
+              <div class="invalid-feedback">Password must be at least 8 characters.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" id="confirmPassword" class="form-control" placeholder="Re-enter password" required>
+              <div class="invalid-feedback">Passwords do not match.</div>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <script>
+
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("regName");
+      const email = document.getElementById("regEmail");
+      const password = document.getElementById("regPassword");
+      const confirmPassword = document.getElementById("confirmPassword");
+
+      let valid = true;
+
+     
+      if (name.value.trim() === "") {
+        name.classList.add("is-invalid");
+        valid = false;
+      } else {
+        name.classList.remove("is-invalid");
+      }
+
+      
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email.value.trim())) {
+        email.classList.add("is-invalid");
+        valid = false;
+      } else {
+        email.classList.remove("is-invalid");
+      }
+
+      
+      if (password.value.trim().length < 8) {
+        password.classList.add("is-invalid");
+        valid = false;
+      } else {
+        password.classList.remove("is-invalid");
+      }
+
+      
+      if (password.value !== confirmPassword.value || confirmPassword.value === "") {
+        confirmPassword.classList.add("is-invalid");
+        valid = false;
+      } else {
+        confirmPassword.classList.remove("is-invalid");
+      }
+
+     
+      if (valid) {
+        alert("🎉 Registration successful!");
+        this.reset();
+        const modal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+        modal.hide();
+      }
+    });
+   
+  
   </script>
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+
+ 
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    themeToggle.textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const sortRatingAsc   = document.getElementById("sortRatingAsc");
+  const sortRatingDesc  = document.getElementById("sortRatingDesc");
+  const sortProgressAsc = document.getElementById("sortProgressAsc");
+  const sortProgressDesc= document.getElementById("sortProgressDesc");
+  const originalBooksList = document.getElementById("originalBooksList");
+  const sortedBooksList   = document.getElementById("sortedBooksList");
+  const bookSortError     = document.getElementById("bookSortError");
+
+  if (!originalBooksList || !sortedBooksList) return; 
+
+ 
+  const booksData = [
+    { name: "The Hobbit",        rating: 4.9, progress: 95, author: "J.R.R. Tolkien",       genre: "Fantasy" },
+    { name: "Sherlock Holmes",   rating: 4.8, progress: 92, author: "Arthur Conan Doyle",   genre: "Mystery" },
+    { name: "Harry Potter",      rating: 4.8, progress: 98, author: "J.K. Rowling",         genre: "Fantasy" },
+    { name: "The Book Thief",    rating: 4.7, progress: 78, author: "Markus Zusak",         genre: "Historical" },
+    { name: "Little Women",      rating: 4.6, progress: 88, author: "Louisa May Alcott",    genre: "Fiction" },
+    { name: "The Little Women",  rating: 4.5, progress: 85, author: "Louisa May Alcott",    genre: "Fiction" },
+    { name: "IT",                rating: 4.4, progress: 55, author: "Stephen King",         genre: "Horror" },
+    { name: "Notebook",          rating: 4.3, progress: 65, author: "Nicholas Sparks",      genre: "Romance" },
+    { name: "The Martian",       rating: 4.3, progress: 70, author: "Andy Weir",            genre: "Sci-Fi" },
+    { name: "The Silent Forest", rating: 4.2, progress: 45, author: "Jane Doe",             genre: "Mystery" },
+    { name: "Dreamcatcher",      rating: 4.1, progress: 35, author: "Stephen King",         genre: "Horror" },
+    { name: "Three Comrades",    rating: 4.0, progress: 40, author: "Erich M. Remarque",    genre: "Fiction" }
+  ].map((b, i) => ({ ...b, _i: i })); 
+
+  
+  const stars = (r) => {
+    const full = Math.floor(r);
+    const half = r % 1 >= 0.5;
+    return "★".repeat(full) + (half ? "½" : "") + "☆".repeat(5 - full - (half ? 1 : 0));
+  };
+  const pColor = (p) => p >= 90 ? "#28a745" : p >= 70 ? "#20c997" : p >= 50 ? "#ffc107" : p >= 30 ? "#fd7e14" : "#dc3545";
+  const pText  = (p) => p >= 90 ? "Completed" : p >= 70 ? "Almost done" : p >= 50 ? "In progress" : p >= 30 ? "Started" : "Just began";
+
+  function renderOriginal() {
+    originalBooksList.innerHTML = "";
+    booksData.forEach((book) => {
+      const col = document.createElement("div");
+      col.className = "col-lg-3 col-md-4 col-6";
+      col.innerHTML = `
+        <div class="book-mini-card text-center p-3 rounded">
+          <div class="book-emoji mb-2 fs-4">📚</div>
+          <h6 class="book-title-small mb-1">${book.name}</h6>
+          <small class="text-muted d-block mb-1">${book.author}</small>
+          <div class="rating-small text-warning mb-1">${stars(book.rating)}</div>
+          <div class="progress" style="height:6px;">
+            <div class="progress-bar" style="width:${book.progress}%; background:${pColor(book.progress)}"></div>
+          </div>
+          <small class="text-muted">${book.progress}%</small>
+        </div>`;
+      originalBooksList.appendChild(col);
+    });
+  }
+
+  function renderSorted(list, sortBy, order) {
+    sortedBooksList.innerHTML = "";
+    list.forEach((book, idx) => {
+      const item = document.createElement("div");
+      item.className = "list-group-item d-flex justify-content-between align-items-center book-item";
+      item.innerHTML = `
+        <div class="flex-grow-1">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <div>
+              <strong class="book-title">${book.name}</strong><br>
+              <small class="text-muted author">by ${book.author}</small>
+              <span class="badge bg-secondary ms-2">${book.genre}</span>
+            </div>
+            <span class="badge bg-primary rounded-pill rank-badge">#${idx + 1}</span>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <small class="text-muted"><strong>Rating:</strong> <span class="rating-stars">${stars(book.rating)}</span> (${book.rating})</small>
+            </div>
+            <div class="col-md-6">
+              <small class="text-muted"><strong>Progress:</strong> ${book.progress}% - <em>${pText(book.progress)}</em></small>
+            </div>
+          </div>
+          <div class="progress mt-2" style="height:8px;">
+            <div class="progress-bar" style="width:${book.progress}%; background:${pColor(book.progress)}"></div>
+          </div>
+        </div>`;
+      sortedBooksList.appendChild(item);
+    });
+
+    if (bookSortError) {
+      const by = sortBy === "rating" ? "Rating" : "Reading Progress";
+      const ord = order === "asc" ? "Lowest first" : "Highest first";
+      bookSortError.textContent = `Sorted by ${by} (${ord})`;
+    }
+  }
+
+
+  function sortBooks(sortBy, order) {
+    const list = [...booksData].sort((a, b) => {
+      const diff = sortBy === "rating" ? a.rating - b.rating : a.progress - b.progress;
+      if (diff !== 0) return order === "asc" ? diff : -diff;
+     
+      return a._i - b._i;
+    });
+    renderSorted(list, sortBy, order);
+  }
+  renderOriginal();
+  sortBooks("rating", "desc"); 
+  sortRatingAsc  && sortRatingAsc.addEventListener("click", () => sortBooks("rating", "asc"));
+  sortRatingDesc && sortRatingDesc.addEventListener("click", () => sortBooks("rating", "desc"));
+  sortProgressAsc&& sortProgressAsc.addEventListener("click", () => sortBooks("progress", "asc"));
+  sortProgressDesc&& sortProgressDesc.addEventListener("click", () => sortBooks("progress", "desc"));
+});
+</script>
+<script src="js/form-validation.js" defer></script>
 </body>
 </html>
